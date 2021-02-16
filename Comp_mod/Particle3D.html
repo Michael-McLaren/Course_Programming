@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Particle3D</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Particle3D</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ckeira%5Cdocuments%5Ccomp%20mod%5Cproject%5Ctake5%5Cparticle3d.py">c:\users\keira\documents\comp mod\project\take5\particle3d.py</a></font></td></tr></table>
+    <p><tt>CMod&nbsp;Astronomical&nbsp;N-Body&nbsp;Sim:&nbsp;<a href="#Particle3D">Particle3D</a>,&nbsp;a&nbsp;class&nbsp;to&nbsp;describe&nbsp;3D&nbsp;particles<br>
+&nbsp;<br>
+Author:&nbsp;K.&nbsp;Farmer,&nbsp;M.&nbsp;McLaren</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Particle3D.html#Particle3D">Particle3D</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Particle3D">class <strong>Particle3D</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Particle3D">Particle3D</a>(label,&nbsp;x_pos,&nbsp;y_pos,&nbsp;z_pos,&nbsp;x_vel,&nbsp;y_vel,&nbsp;z_vel,&nbsp;mass)<br>
+&nbsp;<br>
+Class&nbsp;to&nbsp;describe&nbsp;3D&nbsp;particles.<br>
+&nbsp;<br>
+Properties:<br>
+label&nbsp;(string)&nbsp;-&nbsp;name/label&nbsp;for&nbsp;the&nbsp;particle<br>
+position(numpy&nbsp;array,&nbsp;float)&nbsp;-&nbsp;position&nbsp;along&nbsp;the&nbsp;x,&nbsp;y&nbsp;and&nbsp;z&nbsp;axis<br>
+velocity(numpy&nbsp;array,&nbsp;float)&nbsp;-&nbsp;velocity&nbsp;along&nbsp;the&nbsp;x,&nbsp;y&nbsp;and&nbsp;z&nbsp;axis<br>
+mass(float)&nbsp;-&nbsp;particle&nbsp;mass<br>
+&nbsp;<br>
+Methods:<br>
+*&nbsp;formatted&nbsp;output<br>
+*&nbsp;kinetic&nbsp;energy<br>
+*&nbsp;linear&nbsp;momentum<br>
+*&nbsp;first-order&nbsp;velocity&nbsp;update<br>
+*&nbsp;first-&nbsp;and&nbsp;second-&nbsp;order&nbsp;position&nbsp;update<br>
+*&nbsp;create&nbsp;particle&nbsp;from&nbsp;a&nbsp;file<br>
+*&nbsp;relative&nbsp;vector&nbsp;separation&nbsp;of&nbsp;2&nbsp;particles<br>
+*&nbsp;gravitational&nbsp;potential&nbsp;energy&nbsp;of&nbsp;2&nbsp;particles<br>
+*&nbsp;gravitational&nbsp;force&nbsp;of&nbsp;a&nbsp;particle&nbsp;due&nbsp;to&nbsp;another&nbsp;particle<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Particle3D-__init__"><strong>__init__</strong></a>(self, label, x_pos, y_pos, z_pos, x_vel, y_vel, z_vel, mass)</dt><dd><tt>Initialise&nbsp;a&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instance<br>
+&nbsp;<br>
+:param&nbsp;label:&nbsp;label&nbsp;for&nbsp;particle&nbsp;as&nbsp;string<br>
+:param&nbsp;x_&nbsp;pos/&nbsp;y_pos/&nbsp;z_pos:&nbsp;position&nbsp;along&nbsp;x/y/z&nbsp;axis&nbsp;as&nbsp;float<br>
+:param&nbsp;x_vel/&nbsp;y_vel/&nbsp;z_vel:&nbsp;velocity&nbsp;along&nbsp;x/y/z&nbsp;axis&nbsp;as&nbsp;float<br>
+:param&nbsp;mass:&nbsp;mass&nbsp;as&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Define&nbsp;output&nbsp;format.<br>
+For&nbsp;particle&nbsp;p=(particle1,&nbsp;1.0,&nbsp;2.0,&nbsp;3.0,&nbsp;0.5,&nbsp;1.5,&nbsp;2.5,&nbsp;1.0)&nbsp;this&nbsp;will&nbsp;print&nbsp;as<br>
+"particle1&nbsp;[1.0&nbsp;2.0&nbsp;3.0]"</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-kinetic_energy"><strong>kinetic_energy</strong></a>(self)</dt><dd><tt>Return&nbsp;kinetic&nbsp;energy&nbsp;as<br>
+1/2*mass*(x_vel^2&nbsp;+&nbsp;y_vel^2&nbsp;+&nbsp;z_vel^2)</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-leap_pos1st"><strong>leap_pos1st</strong></a>(self, dt)</dt><dd><tt>First-order&nbsp;position&nbsp;update,<br>
+r(t+dt)&nbsp;=&nbsp;r(t)&nbsp;+&nbsp;dt*v(t)<br>
+&nbsp;<br>
+:param&nbsp;dt:&nbsp;timestep&nbsp;as&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-leap_pos2nd"><strong>leap_pos2nd</strong></a>(self, dt, force)</dt><dd><tt>Second-order&nbsp;position&nbsp;update,<br>
+r(t+dt)&nbsp;=&nbsp;r(t)&nbsp;+&nbsp;dt*v(t)&nbsp;+&nbsp;1/2*dt^2*F(t)<br>
+&nbsp;<br>
+:param&nbsp;dt:&nbsp;timestep&nbsp;as&nbsp;float<br>
+:param&nbsp;force:&nbsp;current&nbsp;force&nbsp;as&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-leap_velocity"><strong>leap_velocity</strong></a>(self, dt, force)</dt><dd><tt>First-order&nbsp;velocity&nbsp;update,<br>
+v(t+dt)&nbsp;=&nbsp;v(t)&nbsp;+&nbsp;dt*F(t)<br>
+&nbsp;<br>
+:param&nbsp;dt:&nbsp;timestep&nbsp;as&nbsp;float<br>
+:param&nbsp;force:&nbsp;force&nbsp;on&nbsp;particle&nbsp;as&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-linear_momentum"><strong>linear_momentum</strong></a>(self)</dt><dd><tt>Return&nbsp;linear&nbsp;momentum&nbsp;as<br>
+mass*(x_vel^2&nbsp;+&nbsp;y_vel^2&nbsp;+&nbsp;z_vel^2)^(1/2)</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Particle3D-create_particle"><strong>create_particle</strong></a>(line)</dt><dd><tt>Return&nbsp;a&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;using&nbsp;data&nbsp;from&nbsp;a&nbsp;file<br>
+File&nbsp;should&nbsp;have&nbsp;data&nbsp;listed&nbsp;as<br>
+label,&nbsp;x_pos,&nbsp;y_pos,&nbsp;z_pos,&nbsp;x_vel,&nbsp;y_vel,&nbsp;z_vel,&nbsp;m</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-force_gravitational"><strong>force_gravitational</strong></a>(particle1, particle2, G)</dt><dd><tt>return&nbsp;the&nbsp;gravitational&nbsp;force&nbsp;acting&nbsp;on&nbsp;particle&nbsp;1&nbsp;due&nbsp;to&nbsp;particle&nbsp;2<br>
+Force&nbsp;has&nbsp;magnitude<br>
+F&nbsp;=&nbsp;G*m1*m2/(r12)^2<br>
+in&nbsp;the&nbsp;direction<br>
+r2&nbsp;-&nbsp;r1<br>
+&nbsp;<br>
+:param&nbsp;particle1:&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instance<br>
+:param&nbsp;particle2:&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instantce<br>
+:param&nbsp;G:&nbsp;Gravitational&nbsp;constant&nbsp;as&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-pe_gravitational"><strong>pe_gravitational</strong></a>(particle1, particle2, G)</dt><dd><tt>return&nbsp;Gravitational&nbsp;potential&nbsp;energy&nbsp;for&nbsp;two&nbsp;interacting&nbsp;particles<br>
+U&nbsp;=&nbsp;-G*m1*m2/r12<br>
+&nbsp;<br>
+:param&nbsp;particle1:&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instance<br>
+:param&nbsp;particle2:&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instance<br>
+:param&nbsp;G:&nbsp;Gravitational&nbsp;constant&nbsp;as&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Particle3D-separation"><strong>separation</strong></a>(particle1, particle2)</dt><dd><tt>return&nbsp;separation&nbsp;of&nbsp;two&nbsp;particles,<br>
+r2(t)&nbsp;-&nbsp;r1(t)<br>
+&nbsp;<br>
+:param&nbsp;particle1:&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instance<br>
+:param&nbsp;particle2:&nbsp;<a href="#Particle3D">Particle3D</a>&nbsp;instance</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
